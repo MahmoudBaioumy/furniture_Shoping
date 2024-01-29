@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/appcolors.dart';
-import 'package:flutter_application_1/new_create.dart';
+import 'package:flutter_application_1/core/Model/Test_Style.dart';
+import 'package:flutter_application_1/core/Model/appcolors.dart';
+import 'package:flutter_application_1/features/Home/buttom_nav.dart';
+import 'package:flutter_application_1/features/Home/home_page.dart';
+import 'package:flutter_application_1/features/profile/new_create.dart';
 
 class new_login extends StatefulWidget {
   const new_login({super.key});
@@ -21,30 +24,23 @@ class _new_lodinState extends State<new_login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(5),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Hello !',
-                      style: TextStyle(
-                        fontSize: 35,
-                        color: appColors.greycolor,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      'WELCOME BACK',
-                      style: TextStyle(
-                          fontSize: 35,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ],
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Hello !',
+                      style: getTitelStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w400,
+                          color: appColors.graycolor)),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text('WELCOME BACK',
+                      style: getTitelStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.black)),
+                ],
               ),
               SizedBox(
                 height: 30,
@@ -94,7 +90,11 @@ class _new_lodinState extends State<new_login> {
                   height: 55,
                   width: 300,
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) => buttom_nav(),
+                        ));
+                      },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,
                           shape: RoundedRectangleBorder(

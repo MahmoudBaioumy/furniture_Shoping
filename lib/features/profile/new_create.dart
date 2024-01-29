@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/appcolors.dart';
-import 'package:flutter_application_1/new_login.dart';
+import 'package:flutter_application_1/core/Model/appcolors.dart';
+import 'package:flutter_application_1/features/profile/new_login.dart';
 
 class crate_view extends StatefulWidget {
   const crate_view({super.key});
